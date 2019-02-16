@@ -52,12 +52,28 @@ namespace NietPathe
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+            app.MapWhen(context => context.Request.Path.Value.StartsWith("/secure", StringComparison.CurrentCulture), builder =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                builder.UseMvc(routes =>
+                {
+                    routes.MapSpaFallbackRoute("secure-fallback", "Secure", new { controller = "Secure", action = "Index" });
+                });
             });
+
+            app.MapWhen(context => context.Request.Path.Value.StartsWith("/ticket", StringComparison.CurrentCulture), builder =>
+            {
+                builder.UseMvc(routes =>
+                {
+                    routes.MapSpaFallbackRoute("ticket-fallback", "Ticket", new { controller = "Ticket", action = "Index" });
+                });
+            });
+
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=API}");
+            //});
         }
     }
 }

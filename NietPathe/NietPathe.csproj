@@ -17,8 +17,10 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Ticket\" />
     <Folder Include="wwwroot\scss\" />
+    <Folder Include="Views\Secure\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />

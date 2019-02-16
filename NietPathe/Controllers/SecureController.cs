@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NietPathe.Controllers
 {
-    public class HomeController : Controller
+    public class SecureController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
