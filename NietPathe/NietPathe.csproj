@@ -13,6 +13,7 @@
     <PackageReference Include="Microsoft.ChakraCore" Version="1.11.6" />
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.0.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="3.0.6" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +22,14 @@
     <Folder Include="wwwroot\scss\" />
     <Folder Include="Views\Secure\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="Views\Web\" />
+    <Folder Include="Views\Movie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
     <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
     <Content Remove="wwwroot\js\nietpathe-react-app.js" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Movies\GetMovies.cshtml" />
   </ItemGroup>
 </Project>

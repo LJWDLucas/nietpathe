@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NietPathe.Models.Movies;
+using NietPathe.Models;
+using MongoDB.Driver;
 
 namespace NietPathe
 {
@@ -24,14 +27,17 @@ namespace NietPathe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
+            services.Configure<Settings>(options =>
             {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoDB:Database").Value;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<IMongoClient, MongoClient>();
+            services.AddTransient<IMovieRepository, MovieRepository>();
+            services.AddTransient<IDataContext, DataContext>();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,8 +55,11 @@ namespace NietPathe
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseFileServer();
             app.UseCookiePolicy();
+
+            app.UseMvcWithDefaultRoute();
+            app.UseStatusCodePages();
 
             app.MapWhen(context => context.Request.Path.Value.StartsWith("/secure", StringComparison.CurrentCulture), builder =>
             {
@@ -68,12 +77,28 @@ namespace NietPathe
                 });
             });
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=API}");
-            //});
+            app.MapWhen(context => context.Request.Path.Value.StartsWith("/web", StringComparison.CurrentCulture), builder =>
+            {
+                builder.UseMvc(routes =>
+                {
+                    routes.MapSpaFallbackRoute("web-fallback", "Web", new { controller = "Web", action = "Index" });
+                });
+            });
+
         }
     }
 }
+
+/*
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Demo Week 1", Version = "v1" });
+            });
+
+         
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Demo Week 1 - Version 1");
+            });
+ */

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Movie>
+
+@{
+    ViewData["Title"] = "GetMovies";
+}
+
+<h2>GetMovies</h2>
+
+@foreach (Movie p in Model)
+{
+    <div>@p.Title</div>
+}
+
