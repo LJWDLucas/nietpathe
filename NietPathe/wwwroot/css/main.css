@@ -1,3 +1,24 @@
+#performance {
+  display: flex;
+  padding-top: 50px; }
+  #performance #hall {
+    width: 1100px;
+    height: 750px;
+    margin: auto;
+    border: 2px solid; }
+    @media (max-width: 467px) {
+      #performance #hall {
+        width: 300px;
+        height: 250px; } }
+    @media (min-width: 467px) and (max-width: 800px) {
+      #performance #hall {
+        width: 440px;
+        height: 370px; } }
+    @media (min-width: 800px) and (max-width: 1200px) {
+      #performance #hall {
+        width: 700px;
+        height: 550px; } }
+
 body {
   background-color: #802F2D;
   color: #6F6D6E; }

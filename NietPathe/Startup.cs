@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NietPathe.Models.Movies;
+using NietPathe.Models.Performances;
 using NietPathe.Models;
 using MongoDB.Driver;
 
@@ -42,6 +43,7 @@ namespace NietPathe
 
             services.AddSingleton<IMongoClient, MongoClient>();
             services.AddTransient<IMovieRepository, MovieRepository>();
+            services.AddTransient<IPerformanceRepository, PerformanceRepository>();
             services.AddTransient<IDataContext, DataContext>();
 
             services.AddMvc();

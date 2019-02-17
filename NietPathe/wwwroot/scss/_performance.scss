@@ -1,0 +1,28 @@
+﻿@import "variables.scss";
+
+#performance {
+    display: flex;
+    padding-top: 50px;
+
+    #hall {
+        width: 1100px;
+        height: 750px;
+        margin: auto;
+        border: 2px solid;
+
+        @media (max-width: $phone) {
+            width: 300px;
+            height: 250px;
+        }
+
+        @media (min-width: $phone) and (max-width: $device) {
+            width: 440px;
+            height: 370px;
+        }
+       
+        @media (min-width: $device) and (max-width: $smallscreen) {
+            width: 700px;
+            height: 550px;
+        }
+    }
+}

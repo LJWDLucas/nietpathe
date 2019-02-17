@@ -6,5 +6,6 @@ namespace NietPathe.Models
     public interface IDataContext
     {
         IMongoCollection<Movie> Movies { get; }
+        IMongoCollection<Performance> Performances { get; }
     }
 }

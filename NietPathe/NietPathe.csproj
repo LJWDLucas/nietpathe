@@ -24,6 +24,7 @@
     <Folder Include="Views\Shared\" />
     <Folder Include="Views\Web\" />
     <Folder Include="Views\Movie\" />
+    <Folder Include="Models\Performances\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
