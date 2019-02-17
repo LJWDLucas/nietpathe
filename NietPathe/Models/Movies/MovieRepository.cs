@@ -24,6 +24,12 @@ namespace NietPathe.Models.Movies
             throw new NotImplementedException();
         }
 
+        public async Task<IEnumerable<Movie>> GetActiveMoviesWithLimit(int limit)
+        {
+            FilterDefinition<Movie> filter = Builders<Movie>.Filter.Eq(m => m.Active, true);
+            return await _dataContext.Movies.Find(filter).Limit(limit).ToListAsync();
+        }
+
         public async Task<Movie> GetMovieByTitle(string title)
         {
             FilterDefinition<Movie> filter = Builders<Movie>.Filter.Eq(m => m.Title, title);

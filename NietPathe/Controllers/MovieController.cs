@@ -33,6 +33,12 @@ namespace NietPathe.Controllers
             return Json(_movieRepository.GetMovies().Result);
         }
 
+        [HttpGet("active/{limit}")]
+        public JsonResult GetActiveMoviesWithLimit(int limit)
+        {
+            return Json(_movieRepository.GetActiveMoviesWithLimit(limit).Result);
+        }
+
         //[HttpGet]
         //public IActionResult GetProducts()
         //{
