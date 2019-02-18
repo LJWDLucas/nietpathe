@@ -9,5 +9,6 @@ namespace NietPathe.Models.Performances
         Task<Performance> GetPerformance(string id);
         Task<List<Performance>> GetPerformancesByDate(string date);
         Task<List<Performance>> GetPerformancesByMovieId(string id);
+        void BookPerformanceSeat(PerformanceChair chair, string id);
     }
 }

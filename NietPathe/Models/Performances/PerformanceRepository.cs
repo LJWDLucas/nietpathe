@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Data;
 using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace NietPathe.Models.Performances
 {
@@ -14,6 +15,13 @@ namespace NietPathe.Models.Performances
         public PerformanceRepository(IDataContext dataContext)
         {
             _dataContext = dataContext;
+        }
+
+        public void BookPerformanceSeat(PerformanceChair chair, string id)
+        {
+            var filter = Builders<Performance>.Filter.Where(performance => performance.Id == id && performance.Chairs.Any(c => c.Chair == chair.Chair && c.Row == chair.Row));
+            var update = Builders<Performance>.Update.Set(performance => performance.Chairs[-1].Taken, true);
+            var result = _dataContext.Performances.UpdateOneAsync(filter, update).Result;
         }
 
         public async Task<Performance> GetPerformance(string id)

@@ -7,6 +7,7 @@ namespace NietPathe.Models
     {
         IMongoCollection<Movie> Movies { get; }
         IMongoCollection<Performance> Performances { get; }
+        IMongoCollection<Ticket> Tickets { get; }
         IMongoCollection<Hall> Halls { get; }
     }
 }

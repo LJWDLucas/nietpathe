@@ -42,5 +42,13 @@ namespace NietPathe.Controllers
             var data = _performanceRepository.GetPerformancesByDate(date).Result;
             return Json(data);
         }
+
+        [HttpPost("{id}/seat")]
+        public JsonResult BookPerformanceSeat([FromBody] PerformanceChair chair, string id)
+        {
+            _performanceRepository.BookPerformanceSeat(chair, id);
+            return new JsonResult
+            (new { Data = "Success" });
+        }
     }
 }
