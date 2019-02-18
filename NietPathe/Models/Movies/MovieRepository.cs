@@ -36,6 +36,12 @@ namespace NietPathe.Models.Movies
             return await _dataContext.Movies.Find(filter).FirstOrDefaultAsync();
         }
 
+        public async Task<Movie> GetMovieById(string id)
+        {
+            FilterDefinition<Movie> filter = Builders<Movie>.Filter.Eq(m => m.Id, id);
+            return await _dataContext.Movies.Find(filter).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<Movie>> GetMovies()
         {
             return await _dataContext.Movies.Find(_ => true).ToListAsync();

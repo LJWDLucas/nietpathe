@@ -20,13 +20,6 @@ namespace NietPathe.Controllers
             _movieRepository = movieRepository;
         }
 
-        //[HttpGet("{title}")]
-        //public JsonResult GetByTitle(string title)
-        //{
-        //    var data = _movieRepository.GetMovieByTitle(title).Result;
-        //    return Json(data);
-        //}
-
         [HttpGet()]
         public JsonResult GetMovies()
         {
@@ -37,6 +30,12 @@ namespace NietPathe.Controllers
         public JsonResult GetActiveMoviesWithLimit(int limit)
         {
             return Json(_movieRepository.GetActiveMoviesWithLimit(limit).Result);
+        }
+
+        [HttpGet("{id}")]
+        public JsonResult GetMovieById(string id)
+        {
+            return Json(_movieRepository.GetMovieById(id).Result);
         }
 
         //[HttpGet]

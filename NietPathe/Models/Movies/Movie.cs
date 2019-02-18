@@ -8,7 +8,8 @@ namespace NietPathe.Models
     public class Movie
     {
         [BsonId]
-        public ObjectId Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         [BsonElement("title")]
         public string Title { get; set; }
@@ -28,8 +29,7 @@ namespace NietPathe.Models
         [BsonElement("cast")]
         public List<string> Cast { get; set; }
 
-        public Movie()
-        {
-        }
+        [BsonElement("language")]
+        public string Language { get; set; }
     }
 }

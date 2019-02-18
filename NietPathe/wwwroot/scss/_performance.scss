@@ -1,14 +1,17 @@
 ﻿@import "variables.scss";
 
 #performance {
-    display: flex;
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
 
     #hall {
         width: 1100px;
         height: 750px;
         margin: auto;
         border: 2px solid;
+        position: relative;
+        background-color: lightcoral;
 
         @media (max-width: $phone) {
             width: 300px;
@@ -19,10 +22,79 @@
             width: 440px;
             height: 370px;
         }
-       
+
         @media (min-width: $device) and (max-width: $smallscreen) {
             width: 700px;
             height: 550px;
         }
+
+        #screen {
+            width: 50%;
+            height: 40px;
+            border: white solid;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #rows-holder {
+            margin: auto;
+            width: 80%;
+            height: 70%;
+
+            .row-chairs {
+                display: flex;
+
+                &.row-of-four {
+                    height: calc(100% / 4);
+                }
+
+                &.row-of-six {
+                    height: calc(100% / 6);
+                }
+
+                &.row-of-eight {
+                    height: calc(100% / 8);
+                }
+
+                .chair {
+                    width: calc(100% / 15);
+                    margin: auto;
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid;
+                    color: mintcream;
+                    height: 80%;
+
+                    &.chair-of-ten {
+                        max-width: calc(100% / 10);
+                    }
+
+                    &.available {
+                        background-color: green;
+                    }
+
+                    &.unavailable {
+                        background-color: crimson;
+                    }
+
+                    &.selected {
+                        background-color: blue;
+                    }
+
+                    &:hover {
+                        background-color: lightblue;
+                        cursor:pointer;
+                    }
+                }
+
+            }
+        }
+    }
+
+    #mobile-chair-selector {
+        display: flex;
+        justify-content: center;
     }
 }
