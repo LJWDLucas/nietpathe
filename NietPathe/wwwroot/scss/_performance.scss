@@ -85,10 +85,9 @@
 
                     &:hover {
                         background-color: lightblue;
-                        cursor:pointer;
+                        cursor: pointer;
                     }
                 }
-
             }
         }
     }
@@ -96,5 +95,14 @@
     #mobile-chair-selector {
         display: flex;
         justify-content: center;
+    }
+
+
+    #info-and-purchase-display {
+        padding-top: 50px;
+
+        @media (max-width: $phone) {
+            padding-top: 15px;
+        }
     }
 }

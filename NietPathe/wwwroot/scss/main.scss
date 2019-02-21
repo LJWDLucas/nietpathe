@@ -1,7 +1,25 @@
 ﻿@import "variables.scss";
 @import "performance.scss";
+@import "purchase";
 
 body {
     background-color: $darkred;
     color: $gray;
+
+    .flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .p-b-15 {
+        padding-bottom: 15px;
+    }
+
+    .d-i-b {
+        display: inline-block;
+    }
+
+    w-100 {
+        width: 100%;
+    }
 }

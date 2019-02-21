@@ -20,7 +20,8 @@ namespace NietPathe.Models.Performances
         public void BookPerformanceSeat(PerformanceChair chair, string id)
         {
             var filter = Builders<Performance>.Filter.Where(performance => performance.Id == id && performance.Chairs.Any(c => c.Chair == chair.Chair && c.Row == chair.Row));
-            var update = Builders<Performance>.Update.Set(performance => performance.Chairs[-1].Taken, true);
+            var update = Builders<Performance>.Update.Set(performance => performance.Chairs[-1].Taken, true)
+                .Set(performance => performance.Chairs[-1].TicketId, chair.TicketId);
             var result = _dataContext.Performances.UpdateOneAsync(filter, update).Result;
         }
 

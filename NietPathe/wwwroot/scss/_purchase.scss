@@ -1,0 +1,122 @@
+﻿@import "variables";
+
+#purchase {
+    background-color: #f7faff;
+    padding: 15px;
+    border-radius: 15px;
+    flex-direction: column;
+    font-family: Bitter;
+
+    .circle {
+        position: relative;
+        top: 5px;
+        width: 25px;
+        right: 10px;
+        border: 1px solid;
+        border-radius: 90px;
+        height: 25px;
+        padding-left: 8px;
+        cursor: pointer;
+    }
+
+    h1 {
+        border-bottom: 1px solid;
+        text-align: center;
+    }
+
+    select {
+        width: 250px;
+        height: 36px;
+        border: solid 2px gainsboro;
+        background-color: white;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        -moz-appearance: none;
+        -moz-border-radius: 0px;
+        padding-left: 15px;
+    }
+
+    label {
+        font-family: Bitter;
+        font-size: 20px;
+        float: right;
+        padding-right: 15px;
+        font-weight: 700;
+        text-align: right;
+    }
+
+    .inputbox {
+        height: 44px;
+        width: 100%;
+        border: gainsboro solid 2px;
+        text-align: right;
+        font-family: Rubik;
+        font-size: 22px;
+        color: deeppink;
+        padding-right: 15px;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+
+        li:only-child {
+            padding: 5px 0px 5px 0px;
+        }
+
+        li:first-child {
+            padding: 5px 0px 2.5px 0px;
+        }
+
+        li {
+            padding: 2.5px 0px 2.5px 0px;
+
+            &.order-row {
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                padding: 3px;
+                transform: rotate(45deg);
+                position: relative;
+                float: right;
+                top: 12px;
+                right: 20px;
+                pointer-events: none;
+            }
+
+            &.price-selector {
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+            }
+        }
+
+        li:last-child {
+            padding: 2.5px 0px 5px 0px;
+        }
+
+        .price-tag {
+            top: 5px;
+            right: 10px;
+            position: relative;
+        }
+    }
+
+
+    @media (max-width: $phone) {
+        label {
+            font-size: 12px;
+        }
+    }
+
+    @media (min-width: $phone) and (max-width: $device) {
+        label {
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: $device) and (max-width: $smallscreen) {
+        label {
+            font-size: 18px;
+        }
+    }
+}

@@ -63,7 +63,104 @@
   #performance #mobile-chair-selector {
     display: flex;
     justify-content: center; }
+  #performance #info-and-purchase-display {
+    padding-top: 50px; }
+    @media (max-width: 467px) {
+      #performance #info-and-purchase-display {
+        padding-top: 15px; } }
+
+#purchase {
+  background-color: #f7faff;
+  padding: 15px;
+  border-radius: 15px;
+  flex-direction: column;
+  font-family: Bitter; }
+  #purchase .circle {
+    position: relative;
+    top: 5px;
+    width: 25px;
+    right: 10px;
+    border: 1px solid;
+    border-radius: 90px;
+    height: 25px;
+    padding-left: 8px; }
+  #purchase h1 {
+    border-bottom: 1px solid;
+    text-align: center; }
+  #purchase select {
+    width: 250px;
+    height: 36px;
+    border: solid 2px gainsboro;
+    background-color: white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    -moz-border-radius: 0px;
+    padding-left: 15px; }
+  #purchase label {
+    font-family: Bitter;
+    font-size: 20px;
+    float: right;
+    padding-right: 15px;
+    font-weight: 700;
+    text-align: right; }
+  #purchase .inputbox {
+    height: 44px;
+    width: 100%;
+    border: gainsboro solid 2px;
+    text-align: right;
+    font-family: Rubik;
+    font-size: 22px;
+    color: deeppink;
+    padding-right: 15px; }
+  #purchase ul {
+    padding-left: 0;
+    list-style-type: none; }
+    #purchase ul li:only-child {
+      padding: 5px 0px 5px 0px; }
+    #purchase ul li:first-child {
+      padding: 5px 0px 2.5px 0px; }
+    #purchase ul li {
+      padding: 2.5px 0px 2.5px 0px; }
+      #purchase ul li.order-row {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        position: relative;
+        float: right;
+        top: 12px;
+        right: 20px;
+        pointer-events: none; }
+      #purchase ul li.price-selector {
+        display: flex;
+        position: relative;
+        justify-content: space-between; }
+    #purchase ul li:last-child {
+      padding: 2.5px 0px 5px 0px; }
+    #purchase ul .price-tag {
+      top: 5px;
+      right: 10px;
+      position: relative; }
+  @media (max-width: 467px) {
+    #purchase label {
+      font-size: 12px; } }
+  @media (min-width: 467px) and (max-width: 800px) {
+    #purchase label {
+      font-size: 16px; } }
+  @media (min-width: 800px) and (max-width: 1200px) {
+    #purchase label {
+      font-size: 18px; } }
 
 body {
   background-color: #802F2D;
   color: #6F6D6E; }
+  body .flex-wrap {
+    display: flex;
+    flex-wrap: wrap; }
+  body .p-b-15 {
+    padding-bottom: 15px; }
+  body .d-i-b {
+    display: inline-block; }
+  body w-100 {
+    width: 100%; }

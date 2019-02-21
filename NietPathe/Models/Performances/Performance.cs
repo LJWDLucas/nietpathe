@@ -12,6 +12,9 @@ namespace NietPathe.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
+        [BsonElement("threeDimensional")]
+        public bool ThreeDimensional { get; set; }
+
         [BsonElement("movieId")]
         public string MovieId { get; set; }
 
