@@ -22,4 +22,17 @@ body {
     w-100 {
         width: 100%;
     }
+
+    .circle {
+        width: 25px;
+        border: 1px solid;
+        border-radius: 90px;
+        height: 25px;
+        padding-left: 8px;
+        cursor: pointer;
+    }
+
+    .error {
+        border: 1px red solid !important;
+    }
 }

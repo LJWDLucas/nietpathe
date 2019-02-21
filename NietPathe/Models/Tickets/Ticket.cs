@@ -21,7 +21,7 @@ namespace NietPathe.Models
         public int Row { get; set; }
 
         [BsonElement("price")]
-        public int Price { get; set; }
+        public double Price { get; set; }
 
         [BsonElement("discount")]
         public int Discount { get; set; }
