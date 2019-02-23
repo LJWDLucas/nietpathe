@@ -110,35 +110,32 @@
     font-size: 22px;
     color: deeppink;
     padding-right: 15px; }
-  #purchase ul {
-    padding-left: 0;
-    list-style-type: none; }
-    #purchase ul li:only-child {
-      padding: 5px 0px 5px 0px; }
-    #purchase ul li:first-child {
-      padding: 5px 0px 2.5px 0px; }
-    #purchase ul li {
-      padding: 2.5px 0px 2.5px 0px; }
-      #purchase ul li.order-row {
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        padding: 3px;
-        transform: rotate(45deg);
-        position: relative;
-        float: right;
-        top: 12px;
-        right: 20px;
-        pointer-events: none; }
-      #purchase ul li.price-selector {
-        display: flex;
-        position: relative;
-        justify-content: space-between; }
-    #purchase ul li:last-child {
-      padding: 2.5px 0px 5px 0px; }
-    #purchase ul .price-tag {
-      top: 5px;
-      right: 10px;
-      position: relative; }
+  #purchase ul li:only-child {
+    padding: 5px 0px 5px 0px; }
+  #purchase ul li:first-child {
+    padding: 5px 0px 2.5px 0px; }
+  #purchase ul li {
+    padding: 2.5px 0px 2.5px 0px; }
+    #purchase ul li .order-row {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      padding: 3px;
+      transform: rotate(45deg);
+      position: relative;
+      float: right;
+      top: 12px;
+      right: 20px;
+      pointer-events: none; }
+    #purchase ul li.price-selector {
+      display: flex;
+      position: relative;
+      justify-content: space-between; }
+  #purchase ul li:last-child {
+    padding: 2.5px 0px 5px 0px; }
+  #purchase ul .price-tag {
+    top: 5px;
+    right: 10px;
+    position: relative; }
   #purchase .line-holder {
     width: 100%;
     height: 1px; }
@@ -160,6 +157,10 @@
     #purchase label {
       font-size: 18px; } }
 
+table.with-hover tbody tr:hover {
+  background-color: lightblue;
+  cursor: pointer; }
+
 body {
   background-color: #802F2D;
   color: #6F6D6E; }
@@ -180,4 +181,7 @@ body {
     padding-left: 8px;
     cursor: pointer; }
   body .error {
-    border: 1px red solid; }
+    border: 1px red solid !important; }
+  body ul {
+    padding-left: 0;
+    list-style-type: none; }

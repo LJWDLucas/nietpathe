@@ -9,5 +9,6 @@ namespace NietPathe.Models
         IMongoCollection<Performance> Performances { get; }
         IMongoCollection<Ticket> Tickets { get; }
         IMongoCollection<Hall> Halls { get; }
+        IMongoCollection<Review> Reviews { get; }
     }
 }

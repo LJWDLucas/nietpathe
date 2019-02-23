@@ -16,6 +16,7 @@ namespace NietPathe.Models
 
         public IMongoCollection<Movie> Movies => _db.GetCollection<Movie>("movies");
         public IMongoCollection<Performance> Performances => _db.GetCollection<Performance>("performances");
+        public IMongoCollection<Review> Reviews => _db.GetCollection<Review>("reviews");
         public IMongoCollection<Hall> Halls => _db.GetCollection<Hall>("halls");
         public IMongoCollection<Ticket> Tickets => _db.GetCollection<Ticket>("tickets");
     }

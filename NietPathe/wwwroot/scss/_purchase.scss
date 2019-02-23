@@ -56,9 +56,6 @@
     }
 
     ul {
-        padding-left: 0;
-        list-style-type: none;
-
         li:only-child {
             padding: 5px 0px 5px 0px;
         }
@@ -70,7 +67,7 @@
         li {
             padding: 2.5px 0px 2.5px 0px;
 
-            &.order-row {
+            .order-row {
                 border: solid black;
                 border-width: 0 3px 3px 0;
                 padding: 3px;
