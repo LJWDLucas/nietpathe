@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace NietPathe.Models.Reviews
@@ -14,20 +15,32 @@ namespace NietPathe.Models.Reviews
             _dataContext = dataContext;
         }
 
-        public void DeleteReview(string id, string removalId)
+        public void ApproveReview(ObjectId reviewId, string employeeId)
         {
-            throw new NotImplementedException();
+            var filter = Builders<Review>.Filter.Eq(review => review.Id, reviewId);
+            var update = Builders<Review>.Update.Set(review => review.EmployeeId, employeeId)
+                    .Set(review => review.Approved, true);
+            var result = _dataContext.Reviews.UpdateOneAsync(filter, update).Result;
         }
 
-        public async Task<Review> GetReviewById(string id)
+        public void DeleteReview(ObjectId reviewId, ObjectId removalId)
+        {
+            FilterDefinition<Review> filter = Builders<Review>.Filter.Eq(review => review.Id, reviewId) &
+            Builders<Review>.Filter.Eq(review => review.RemovalId, removalId);
+            _dataContext.Reviews.DeleteOne(filter);
+        }
+
+        public async Task<Review> GetReviewById(ObjectId id)
         {
             FilterDefinition<Review> filter = Builders<Review>.Filter.Eq(review => review.Id, id);
             return await _dataContext.Reviews.Find(filter).FirstOrDefaultAsync();
         }
 
-        public Task<List<Review>> GetReviewsByMovieId(string movieId)
+        public async Task<List<Review>> GetReviewsByMovieId(string movieId)
         {
-            throw new NotImplementedException();
+            FilterDefinition<Review> filter = Builders<Review>.Filter.Eq(review => review.MovieId, movieId) &
+                Builders<Review>.Filter.Eq(review => review.Approved, true);
+            return await _dataContext.Reviews.Find(filter).ToListAsync();
         }
 
         public async Task<List<Review>> GetUnapprovedReviews()
@@ -37,9 +50,10 @@ namespace NietPathe.Models.Reviews
             return await _dataContext.Reviews.Find(filter).ToListAsync();
         }
 
-        public void PostReview(Review review)
+        public Review PostReview(Review review)
         {
-            throw new NotImplementedException();
+            _dataContext.Reviews.InsertOneAsync(review);
+            return review;
         }
     }
 }
