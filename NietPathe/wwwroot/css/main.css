@@ -157,6 +157,9 @@
     #purchase label {
       font-size: 18px; } }
 
+.pagination {
+  justify-content: center; }
+
 table.with-hover tbody tr:hover {
   background-color: lightblue;
   cursor: pointer; }

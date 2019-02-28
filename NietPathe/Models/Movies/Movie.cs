@@ -31,5 +31,8 @@ namespace NietPathe.Models
 
         [BsonElement("language")]
         public string Language { get; set; }
+
+        [BsonElement("description")]
+        public string Description { get; set; }
     }
 }

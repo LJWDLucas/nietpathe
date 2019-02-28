@@ -38,6 +38,18 @@ namespace NietPathe.Controllers
             return Json(_movieRepository.GetMovieById(id).Result);
         }
 
+        [HttpGet("pagination/{skip}")]
+        public JsonResult GetPaginatedMovies(int skip)
+        {
+            return Json(_movieRepository.GetPaginatedMovies(skip).Result);
+        }
+
+        [HttpGet("total")] 
+        public JsonResult TotalMovies()
+        {
+            return new JsonResult
+                (new { Total = _movieRepository.TotalMovies().Result });
+        }
         //[HttpGet]
         //public IActionResult GetProducts()
         //{

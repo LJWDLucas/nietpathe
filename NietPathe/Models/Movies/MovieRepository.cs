@@ -14,9 +14,10 @@ namespace NietPathe.Models.Movies
             _dataContext = dataContext;
         }
 
-        public async void CreateMovie(Movie movie)
-        {
-            await _dataContext.Movies.InsertOneAsync(movie);
+        public Movie CreateMovie(Movie movie)
+        {   
+            _dataContext.Movies.InsertOneAsync(movie);
+            return movie;
         }
 
         public Task<bool> DeleteMovie(string name)
@@ -50,6 +51,21 @@ namespace NietPathe.Models.Movies
         public Task<bool> UpdateMovie(Movie movie)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<Movie>> GetPaginatedMovies(int skip)
+        {
+            return await _dataContext.Movies.Find(_ => true)
+                .Sort("{year: -1}")
+                .Skip(skip)
+                .Limit(25)
+                .ToListAsync();
+        }
+
+        public async Task<int> TotalMovies()
+        {
+            var longboy = await _dataContext.Movies.CountDocumentsAsync(_ => true);
+            return (int)longboy;
         }
     }
 }
