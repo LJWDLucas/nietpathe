@@ -37,5 +37,10 @@ namespace NietPathe.Models
 
         [BsonElement("posterUrl")]
         public string PosterUrl { get; set; }
+
+        public Movie()
+        {
+            this.Id = ObjectId.GenerateNewId().ToString();
+        }
     }
 }

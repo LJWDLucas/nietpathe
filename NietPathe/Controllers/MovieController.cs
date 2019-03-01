@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NietPathe.Models;
 using NietPathe.Models.Movies;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -49,6 +50,21 @@ namespace NietPathe.Controllers
         {
             return new JsonResult
                 (new { Total = _movieRepository.TotalMovies().Result });
+        }
+
+        [HttpPut("update")]
+        public JsonResult UpdateMovie(Movie movie)
+        {
+            return new JsonResult
+                (new { Success = _movieRepository.UpdateMovie(movie) });
+        }
+
+        [HttpPost("new")]
+        public JsonResult CreateMovie(Movie movie)
+        {
+            return new JsonResult
+                (new { Success = _movieRepository.CreateMovie(movie) });
+
         }
         //[HttpGet]
         //public IActionResult GetProducts()
