@@ -11,7 +11,7 @@ namespace NietPathe.Models.Movies
         Task<Movie> GetMovieByTitle(string title);
         Task<Movie> GetMovieById(string id);
         Movie CreateMovie(Movie movie);
-        Task<bool> UpdateMovie(Movie product);
+        bool UpdateMovie(Movie movie);
         Task<bool> DeleteMovie(string name);
         Task<List<Movie>> GetPaginatedMovies(int skip);
         Task<int> TotalMovies();

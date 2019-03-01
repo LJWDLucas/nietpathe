@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NietPathe", "NietPathe\NietPathe.csproj", "{45348E1B-5463-455C-881E-3D33352EEE37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NietPathe.tests", "NietPathe.tests\NietPathe.tests.csproj", "{A5D9C05E-53A9-467A-9C69-287B2D920E98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{45348E1B-5463-455C-881E-3D33352EEE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45348E1B-5463-455C-881E-3D33352EEE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45348E1B-5463-455C-881E-3D33352EEE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D9C05E-53A9-467A-9C69-287B2D920E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D9C05E-53A9-467A-9C69-287B2D920E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D9C05E-53A9-467A-9C69-287B2D920E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D9C05E-53A9-467A-9C69-287B2D920E98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

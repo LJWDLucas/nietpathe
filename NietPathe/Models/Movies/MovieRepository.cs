@@ -48,9 +48,11 @@ namespace NietPathe.Models.Movies
             return await _dataContext.Movies.Find(_ => true).ToListAsync();
         }
 
-        public Task<bool> UpdateMovie(Movie movie)
+        public bool UpdateMovie(Movie movie)
         {
-            throw new NotImplementedException();
+            FilterDefinition<Movie> filter = Builders<Movie>.Filter.Eq(m => m.Id, movie.Id);
+            ReplaceOneResult replaceOneResult = _dataContext.Movies.ReplaceOneAsync(filter, movie).Result;
+            return replaceOneResult.IsAcknowledged && replaceOneResult.IsModifiedCountAvailable;
         }
 
         public async Task<List<Movie>> GetPaginatedMovies(int skip)

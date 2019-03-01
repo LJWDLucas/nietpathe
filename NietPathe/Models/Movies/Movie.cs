@@ -34,5 +34,8 @@ namespace NietPathe.Models
 
         [BsonElement("description")]
         public string Description { get; set; }
+
+        [BsonElement("posterUrl")]
+        public string PosterUrl { get; set; }
     }
 }
