@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using NietPathe.Models.Surveys;
 
 namespace NietPathe.Models
 {
@@ -18,6 +19,7 @@ namespace NietPathe.Models
         public IMongoCollection<Performance> Performances => _db.GetCollection<Performance>("performances");
         public IMongoCollection<Review> Reviews => _db.GetCollection<Review>("reviews");
         public IMongoCollection<Hall> Halls => _db.GetCollection<Hall>("halls");
+        public IMongoCollection<Survey> Surveys => _db.GetCollection<Survey>("surveys");
         public IMongoCollection<Ticket> Tickets => _db.GetCollection<Ticket>("tickets");
     }
 }

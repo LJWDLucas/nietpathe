@@ -21,8 +21,16 @@ body {
         display: inline-block;
     }
 
-    w-100 {
+    .w-100 {
         width: 100%;
+    }
+
+    .w-800px {
+        width: 800px;
+    }
+
+    .w-1200px {
+        width: 1200px;
     }
 
     .circle {

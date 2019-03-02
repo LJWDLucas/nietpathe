@@ -14,6 +14,7 @@ using NietPathe.Models.Performances;
 using NietPathe.Models.Halls;
 using NietPathe.Models.Tickets;
 using NietPathe.Models.Reviews;
+using NietPathe.Models.Surveys;
 using NietPathe.Models;
 using MongoDB.Driver;
 
@@ -49,6 +50,7 @@ namespace NietPathe
             services.AddTransient<IReviewRepository, ReviewRepository>();
             services.AddTransient<IMovieRepository, MovieRepository>();
             services.AddTransient<IPerformanceRepository, PerformanceRepository>();
+            services.AddTransient<ISurveyRepository, SurveyRepository>();
             services.AddTransient<IHallRepository, HallRepository>();
             services.AddTransient<IDataContext, DataContext>();
 

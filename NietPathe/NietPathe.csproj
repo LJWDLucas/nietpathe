@@ -28,6 +28,7 @@
     <Folder Include="Models\Halls\" />
     <Folder Include="Models\Tickets\" />
     <Folder Include="Models\Reviews\" />
+    <Folder Include="Models\Surveys\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />

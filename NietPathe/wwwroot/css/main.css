@@ -174,8 +174,12 @@ body {
     padding-bottom: 15px; }
   body .d-i-b {
     display: inline-block; }
-  body w-100 {
+  body .w-100 {
     width: 100%; }
+  body .w-800px {
+    width: 800px; }
+  body .w-1200px {
+    width: 1200px; }
   body .circle {
     width: 25px;
     border: 1px solid;
@@ -188,3 +192,5 @@ body {
   body ul {
     padding-left: 0;
     list-style-type: none; }
+  body text-area {
+    resize: both; }
