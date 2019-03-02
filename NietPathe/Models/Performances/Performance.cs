@@ -19,10 +19,10 @@ namespace NietPathe.Models
         public string MovieId { get; set; }
 
         [BsonElement("startTime")]
-        public string StartTime { get; set; }
+        public DateTime StartTime { get; set; }
 
         [BsonElement("endTime")]
-        public string EndTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         [BsonElement("hallId")]
         public string HallId { get; set; }
