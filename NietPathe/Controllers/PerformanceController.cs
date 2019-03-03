@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson.Serialization.Attributes;
+using NietPathe.Models;
 using NietPathe.Models.Performances;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -49,6 +50,14 @@ namespace NietPathe.Controllers
         {
             var data = _performanceRepository.GetPerformancesByDate(date.Date).Result;
             return Json(data);
+        }
+
+        [HttpPost("create")]
+        public JsonResult CreatePerformance([FromBody] Performance performance)
+        {
+            _performanceRepository.CreatePerformance(performance);
+            return new JsonResult
+            (new { Data = "Success" });
         }
 
         [HttpPost("beforeDate")]

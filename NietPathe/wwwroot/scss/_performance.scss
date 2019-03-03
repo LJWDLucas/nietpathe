@@ -48,6 +48,10 @@
 
                 &.row-of-four {
                     height: calc(100% / 4);
+                    justify-content: center;
+                    .chair {
+                        margin: 0;
+                    }
                 }
 
                 &.row-of-six {

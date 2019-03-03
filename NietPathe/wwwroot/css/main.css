@@ -36,7 +36,10 @@
       #performance #hall #rows-holder .row-chairs {
         display: flex; }
         #performance #hall #rows-holder .row-chairs.row-of-four {
-          height: calc(100% / 4); }
+          height: calc(100% / 4);
+          justify-content: center; }
+          #performance #hall #rows-holder .row-chairs.row-of-four .chair {
+            margin: 0; }
         #performance #hall #rows-holder .row-chairs.row-of-six {
           height: calc(100% / 6); }
         #performance #hall #rows-holder .row-chairs.row-of-eight {
@@ -188,7 +191,7 @@ body {
     padding-left: 8px;
     cursor: pointer; }
   body .error {
-    border: 1px red solid !important; }
+    border: 3px red solid !important; }
   body ul {
     padding-left: 0;
     list-style-type: none; }

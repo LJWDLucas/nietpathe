@@ -25,6 +25,11 @@ namespace NietPathe.Models.Performances
             var result = _dataContext.Performances.UpdateOneAsync(filter, update).Result;
         }
 
+        public void CreatePerformance(Performance performance)
+        {
+            _dataContext.Performances.InsertOne(performance);
+        }
+
         public async Task<Performance> GetPerformance(string id)
         {
             FilterDefinition<Performance> filter = Builders<Performance>.Filter.Eq(p => p.Id, id);

@@ -14,6 +14,11 @@ namespace NietPathe.Models.Halls
             _dataContext = dataContext;
         }
 
+        public async Task<List<Hall>> GetAllHalls()
+        {
+            return await _dataContext.Halls.Find(_ => true).ToListAsync();
+        }
+
         public async Task<Hall> GetHallbyId(string id)
         {
             FilterDefinition<Hall> filter = Builders<Hall>.Filter.Eq(h => h.Id, id);

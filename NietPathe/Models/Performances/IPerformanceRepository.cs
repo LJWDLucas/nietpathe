@@ -13,6 +13,7 @@ namespace NietPathe.Models.Performances
         Task<List<Performance>> GetPerformancesByDate(DateTime date);
         Task<List<Performance>> GetPerformancesByHallId(string id);
         Task<List<Performance>> GetPerformancesByMovieId(string id);
+        void CreatePerformance(Performance performance);
         void BookPerformanceSeat(PerformanceChair chair, string id);
     }
 }

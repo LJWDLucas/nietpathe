@@ -25,5 +25,10 @@ namespace NietPathe.Controllers
         {
             return Json(_hallRepository.GetHallbyId(id).Result);
         }
+
+        public JsonResult GetAllHalls()
+        {
+            return Json(_hallRepository.GetAllHalls().Result);
+        }
     }
 }

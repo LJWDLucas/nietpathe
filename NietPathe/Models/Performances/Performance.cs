@@ -30,5 +30,9 @@ namespace NietPathe.Models
         [BsonElement("chairs")]
         public List<PerformanceChair> Chairs { get; set; }
 
+        public Performance()
+        {
+            this.Id = ObjectId.GenerateNewId().ToString();
+        }
     }
 }
