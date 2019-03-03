@@ -10,7 +10,7 @@ namespace NietPathe.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
 
         [BsonElement("approved")]
         public bool Approved { get; set; }
@@ -25,7 +25,8 @@ namespace NietPathe.Models
         public string Name { get; set; }
 
         [BsonElement("removalId")]
-        public ObjectId RemovalId { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string RemovalId { get; set; }
 
         [BsonElement("comment")]
         private string comment;
@@ -52,8 +53,8 @@ namespace NietPathe.Models
 
         public Review()
         {
-            this.Id = ObjectId.GenerateNewId();
-            this.RemovalId = ObjectId.GenerateNewId();
+            this.Id = ObjectId.GenerateNewId().ToString();
+            this.RemovalId = ObjectId.GenerateNewId().ToString();
             this.Approved = false;
         }
 

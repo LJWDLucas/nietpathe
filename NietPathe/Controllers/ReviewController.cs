@@ -24,7 +24,7 @@ namespace NietPathe.Controllers
         }
 
         [HttpGet("{id}")]
-        public JsonResult GetReview(ObjectId id)
+        public JsonResult GetReview(string id)
         {
             return Json(_reviewRepository.GetReviewById(id).Result);
         }
@@ -42,7 +42,7 @@ namespace NietPathe.Controllers
         }
 
         [HttpPost("approve/{reviewId}")]
-        public JsonResult ApproveReview([FromRouteAttribute]ObjectId reviewId, [FromBody]Employee employee)
+        public JsonResult ApproveReview([FromRouteAttribute]string reviewId, [FromBody]Employee employee)
         {
             _reviewRepository.ApproveReview(reviewId, employee.EmployeeId);
             return new JsonResult
@@ -63,7 +63,7 @@ namespace NietPathe.Controllers
          */
 
         [HttpDelete("{reviewId}/{removalId}")]
-        public JsonResult DeleteReview([FromRouteAttribute]ObjectId reviewId, [FromRouteAttribute]ObjectId removalId)
+        public JsonResult DeleteReview([FromRouteAttribute]string reviewId, [FromRouteAttribute]string removalId)
         {
             _reviewRepository.DeleteReview(reviewId, removalId);
             return new JsonResult
