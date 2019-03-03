@@ -15,7 +15,7 @@ namespace NietPathe.Models.Reviews
             _dataContext = dataContext;
         }
 
-        public void ApproveReview(ObjectId reviewId, string employeeId)
+        public void ApproveReview(string reviewId, string employeeId)
         {
             var filter = Builders<Review>.Filter.Eq(review => review.Id, reviewId);
             var update = Builders<Review>.Update.Set(review => review.EmployeeId, employeeId)
@@ -23,14 +23,14 @@ namespace NietPathe.Models.Reviews
             var result = _dataContext.Reviews.UpdateOneAsync(filter, update).Result;
         }
 
-        public void DeleteReview(ObjectId reviewId, ObjectId removalId)
+        public void DeleteReview(string reviewId, string removalId)
         {
             FilterDefinition<Review> filter = Builders<Review>.Filter.Eq(review => review.Id, reviewId) &
             Builders<Review>.Filter.Eq(review => review.RemovalId, removalId);
             _dataContext.Reviews.DeleteOne(filter);
         }
 
-        public async Task<Review> GetReviewById(ObjectId id)
+        public async Task<Review> GetReviewById(string id)
         {
             FilterDefinition<Review> filter = Builders<Review>.Filter.Eq(review => review.Id, id);
             return await _dataContext.Reviews.Find(filter).FirstOrDefaultAsync();

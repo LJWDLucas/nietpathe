@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bitter|Rubik" rel="stylesheet">
     <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/chunk.css" />
 </head>
 <body>
     @RenderBody()
-    <div id="root" data-auth="temp" data-logged-in-as="5c72a591c1d791ce601caa65" data-role="10"></div>
+    <div data-website-url="@Environment.GetEnvironmentVariable("APPSETTING_IN_PRODUCTION")" id="root" data-auth="temp" data-logged-in-as="5c72a591c1d791ce601caa65" data-role="10"></div>
     <script src="~/js/react-runtime-main.js"></script>
     <script src="~/js/react-number-chunk.js"></script>
     <script src="~/js/react-main-chunk.js"></script>
