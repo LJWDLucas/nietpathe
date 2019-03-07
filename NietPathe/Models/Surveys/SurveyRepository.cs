@@ -14,21 +14,6 @@ namespace NietPathe.Models.Surveys
             _dataContext = dataContext;
         }
 
-
-        //public async Task<Survey> AddAnswerToSurvey(string id, List<Answer> answer)
-        //{
-        //    FilterDefinition<Survey> filter = Builders<Survey>.Filter.Eq(survey => survey.Id, id);
-        //    var update = Builders<Survey>.Update.Push<List<Answer>>(e => e.Answers, answer);
-        //    return await _dataContext.Surveys.FindOneAndUpdateAsync(filter, update);
-        //}
-
-        public async Task<Survey> AddQuestionToSurvey(string id, Question question)
-        {
-            FilterDefinition<Survey> filter = Builders<Survey>.Filter.Eq(survey => survey.Id, id);
-            var update = Builders<Survey>.Update.Push<Question>(e => e.Questions, question);
-            return await _dataContext.Surveys.FindOneAndUpdateAsync(filter, update);
-        }
-
         public Survey CreateSurvey(Survey survey)
         {
             _dataContext.Surveys.InsertOneAsync(survey);

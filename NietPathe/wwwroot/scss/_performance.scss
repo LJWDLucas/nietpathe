@@ -49,6 +49,7 @@
                 &.row-of-four {
                     height: calc(100% / 4);
                     justify-content: center;
+
                     .chair {
                         margin: 0;
                     }
@@ -81,6 +82,21 @@
 
                     &.unavailable {
                         background-color: crimson;
+                        position: relative;
+
+                        .cancel {
+                            position: absolute;
+                            top: -50px;
+                            border: black solid 1px;
+                            border-radius: 5px 5px 5px 5px;
+                            background-color: gainsboro;
+                            pointer-events: none;
+                            display: flex;
+
+                            button {
+                                pointer-events: initial;
+                            }
+                        }
                     }
 
                     &.selected {

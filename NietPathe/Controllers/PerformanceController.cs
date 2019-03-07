@@ -82,6 +82,14 @@ namespace NietPathe.Controllers
             (new { Data = "Success" });
         }
 
+        [HttpPut("{id}/seat")]
+        public JsonResult UndoBooking([FromBody] PerformanceChair chair, string id)
+        {
+            _performanceRepository.UndoBooking(chair, id);
+            return new JsonResult
+            (new { Data = "Success" });
+        }
+
         public class PerformanceDate
         {
 

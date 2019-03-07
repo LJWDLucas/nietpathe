@@ -20,6 +20,9 @@ namespace NietPathe.Models.Surveys
         [BsonElement("answers")]
         public Dictionary<string, List<Answer>> Answers { get; set; }
 
+        [BsonElement("active")]
+        public Boolean Active { get; set; }
+
         public Survey()
         {
             Id = ObjectId.GenerateNewId().ToString();

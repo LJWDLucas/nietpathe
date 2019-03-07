@@ -32,5 +32,27 @@ namespace NietPathe.Controllers
         {
             return Json(_surveyRepository.GetSurveyById(id).Result);
         }
+
+        [HttpPost]
+        public JsonResult PostSurvey(Survey survey)
+        {
+            _surveyRepository.CreateSurvey(survey);
+            return new JsonResult
+            (new { Data = "Success" });
+        }
+
+        [HttpDelete("{id}")]
+        public JsonResult DeleteSurvey(string id)
+        {
+            _surveyRepository.DeleteSurvey(id);
+            return new JsonResult
+            (new { Data = "The deletion request has been received." });
+        }
+
+        public JsonResult UpdateSurvey(Survey survey)
+        {
+            return new JsonResult
+                (new { Success = _surveyRepository.UpdateSurvey(survey) });
+        }
     }
 }

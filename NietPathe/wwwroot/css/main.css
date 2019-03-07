@@ -57,7 +57,18 @@
           #performance #hall #rows-holder .row-chairs .chair.available {
             background-color: green; }
           #performance #hall #rows-holder .row-chairs .chair.unavailable {
-            background-color: crimson; }
+            background-color: crimson;
+            position: relative; }
+            #performance #hall #rows-holder .row-chairs .chair.unavailable .cancel {
+              position: absolute;
+              top: -50px;
+              border: black solid 1px;
+              border-radius: 5px 5px 5px 5px;
+              background-color: gainsboro;
+              pointer-events: none;
+              display: flex; }
+              #performance #hall #rows-holder .row-chairs .chair.unavailable .cancel button {
+                pointer-events: initial; }
           #performance #hall #rows-holder .row-chairs .chair.selected {
             background-color: blue; }
           #performance #hall #rows-holder .row-chairs .chair:hover {
@@ -170,6 +181,8 @@ table.with-hover tbody tr:hover {
 body {
   background-color: #802F2D;
   color: #6F6D6E; }
+  body .flex {
+    display: flex; }
   body .flex-wrap {
     display: flex;
     flex-wrap: wrap; }
@@ -197,3 +210,18 @@ body {
     list-style-type: none; }
   body text-area {
     resize: both; }
+  body .modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    display: flex; }
+    body .modal .modal-body {
+      display: flex;
+      justify-content: center; }
+      body .modal .modal-body div {
+        position: absolute;
+        top: 40%;
+        color: white;
+        text-shadow: 2px 2px 2px black; }
+      body .modal .modal-body .btn {
+        height: 40px;
+        align-self: center; }
