@@ -8,6 +8,10 @@ body {
     background-color: $darkred;
     color: $gray;
 
+    .flex {
+        display: flex;
+    }
+
     .flex-wrap {
         display: flex;
         flex-wrap: wrap;
@@ -53,5 +57,29 @@ body {
 
     text-area {
         resize: both;
+    }
+
+
+    .modal {
+        background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        display: flex;
+
+        .modal-body {
+            display: flex;
+            justify-content: center;
+
+            div {
+                position: absolute;
+                top: 40%;
+                color: white;
+                text-shadow: 2px 2px 2px black;
+            }
+
+            .btn {
+                height: 40px;
+                align-self: center;
+            }
+        }
     }
 }

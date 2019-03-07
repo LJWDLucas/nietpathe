@@ -11,7 +11,5 @@ namespace NietPathe.Models.Surveys
         void DeleteSurvey(string id);
         Survey CreateSurvey(Survey survey);
         bool UpdateSurvey(Survey survey);
-        Task<Survey> AddQuestionToSurvey(string id, Question question);
-        //Task<Survey> AddAnswerToSurvey(string id, List<Answer> answer);
     }
 }

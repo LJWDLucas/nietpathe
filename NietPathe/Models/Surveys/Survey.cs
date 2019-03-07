@@ -17,8 +17,11 @@ namespace NietPathe.Models.Surveys
         [BsonElement("questions")]
         public List<Question> Questions { get; set; }
 
-        [BsonElement("responses")]
-        public Response Responses { get; set; }
+        [BsonElement("answers")]
+        public Dictionary<string, List<Answer>> Answers { get; set; }
+
+        [BsonElement("active")]
+        public Boolean Active { get; set; }
 
         public Survey()
         {

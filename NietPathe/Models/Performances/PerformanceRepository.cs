@@ -80,5 +80,12 @@ namespace NietPathe.Models.Performances
             return await _dataContext.Performances.Find(filter).ToListAsync();
         }
 
+        public void UndoBooking(PerformanceChair chair, string id)
+        {
+            var filter = Builders<Performance>.Filter.Where(performance => performance.Id == id && performance.Chairs.Any(c => c.Chair == chair.Chair && c.Row == chair.Row));
+            var update = Builders<Performance>.Update.Set(performance => performance.Chairs[-1].Taken, false)
+                .Set(performance => performance.Chairs[-1].TicketId, "");
+            var result = _dataContext.Performances.UpdateOneAsync(filter, update).Result;
+        }
     }
 }
