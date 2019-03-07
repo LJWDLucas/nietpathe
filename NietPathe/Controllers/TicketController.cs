@@ -27,5 +27,6 @@ namespace NietPathe.Controllers
             return Json(_ticketRepository.CreateTicket(ticket));
         }
 
+
     }
 }

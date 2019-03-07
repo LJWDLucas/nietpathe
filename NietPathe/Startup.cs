@@ -34,10 +34,10 @@ namespace NietPathe
         {
             services.Configure<Settings>(options =>
             {
-                //options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
-                //options.Database = Configuration.GetSection("MongoDB:Database").Value;
-                options.ConnectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_NIETPATHE_CONNECTION");
-                options.Database = Environment.GetEnvironmentVariable("APPSETTING_DATABASE");
+                options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoDB:Database").Value;
+                //options.ConnectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_NIETPATHE_CONNECTION");
+                //options.Database = Environment.GetEnvironmentVariable("APPSETTING_DATABASE");
             });
 
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
@@ -91,11 +91,11 @@ namespace NietPathe
                 });
             });
 
-            app.MapWhen(context => context.Request.Path.Value.StartsWith("/ticket", StringComparison.CurrentCulture), builder =>
+            app.MapWhen(context => context.Request.Path.Value.StartsWith("/window/purchase", StringComparison.CurrentCulture), builder =>
             {
                 builder.UseMvc(routes =>
                 {
-                    routes.MapSpaFallbackRoute("ticket-fallback", "Ticket", new { controller = "Ticket", action = "Index" });
+                    routes.MapSpaFallbackRoute("window-fallback", "Window", new { controller = "Window", action = "Index" });
                 });
             });
 

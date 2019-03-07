@@ -29,6 +29,8 @@
     <Folder Include="Models\Tickets\" />
     <Folder Include="Models\Reviews\" />
     <Folder Include="Models\Surveys\" />
+    <Folder Include="Views\WIndow\" />
+    <Folder Include="wwwroot\assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
@@ -36,5 +38,21 @@
     <Content Remove="wwwroot\js\nietpathe-react-app.js" />
     <Content Remove="Views\Home\Index.cshtml" />
     <Content Remove="Views\Movies\GetMovies.cshtml" />
+    <Content Remove="wwwroot\assets\godzilla-king-of-the-monsters-2019-th.jpg" />
+    <Content Remove="wwwroot\assets\bg.jpg" />
+    <Content Remove="wwwroot\assets\free_horizontal_on_white_by_logaster.png" />
+    <Content Remove="wwwroot\assets\logo.png" />
+    <Content Remove="wwwroot\assets\analog-antique-aperture-1005332.jpg" />
+    <Content Remove="wwwroot\assets\bg3.jpg" />
+    <Content Remove="wwwroot\assets\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\WIndow\Index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\WIndow\Index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\icon.png" />
   </ItemGroup>
 </Project>

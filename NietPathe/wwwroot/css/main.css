@@ -178,8 +178,47 @@ table.with-hover tbody tr:hover {
   background-color: lightblue;
   cursor: pointer; }
 
+.window .title-holder {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center; }
+  .window .title-holder div:first-child {
+    margin: 25px 0px;
+    display: flex; }
+  .window .title-holder div:nth-child(2) {
+    background: red; }
+  .window .title-holder div:last-child {
+    background: black; }
+
+.window .poster {
+  padding: 15px;
+  cursor: pointer; }
+  .window .poster img {
+    width: 100%;
+    height: auto; }
+
+.window .icon {
+  width: 200px;
+  max-width: 200px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  right: 50px;
+  top: 50px; }
+  .window .icon img {
+    width: 100px;
+    height: 100%;
+    top: 0;
+    right: 150px; }
+
+html {
+  background: url(../assets/bg3.jpg);
+  background-attachment: fixed;
+  background-size: cover; }
+
 body {
-  background-color: #802F2D;
+  background-color: transparent;
   color: #6F6D6E; }
   body .flex {
     display: flex; }

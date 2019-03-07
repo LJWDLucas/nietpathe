@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewBag.Title = "Window";
+}
+
+<div class="container window">
+    <div class="title-holder">
+        <div>
+            <img src="../assets/logo.png"/>
+            <div class="icon">
+                <img class="icon" src="../assets/icon.png" />
+            </div>
+        </div>
+        <div>Druk op de poster van de film die je wilt zien</div>
+        <div>en koop meteen kaarten!</div>
+    </div>
+    <div class="row">
+        @foreach (Movie m in Model)
+        {
+            <div class="col-lg-6 poster">
+
+                <img src="@m.PosterUrl"/>
+            </div>
+        }
+    </div>
+
+
+</div>

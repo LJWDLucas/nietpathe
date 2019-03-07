@@ -3,9 +3,16 @@
 @import "purchase";
 @import "movies";
 @import "review";
+@import "window";
+
+html {
+    background: url(../assets/bg3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 body {
-    background-color: $darkred;
+    background-color: transparent;
     color: $gray;
 
     .flex {
