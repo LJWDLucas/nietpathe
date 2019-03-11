@@ -185,7 +185,8 @@ table.with-hover tbody tr:hover {
   text-align: center; }
   .window .title-holder div:first-child {
     margin: 25px 0px;
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
   .window .title-holder div:nth-child(2) {
     background: red; }
   .window .title-holder div:last-child {
@@ -195,22 +196,37 @@ table.with-hover tbody tr:hover {
   padding: 15px;
   cursor: pointer; }
   .window .poster img {
+    border: 5px white solid;
     width: 100%;
     height: auto; }
 
 .window .icon {
-  width: 200px;
-  max-width: 200px;
   height: 100px;
   display: flex;
-  position: absolute;
-  right: 50px;
-  top: 50px; }
+  position: relative; }
   .window .icon img {
     width: 100px;
-    height: 100%;
-    top: 0;
-    right: 150px; }
+    height: 100%; }
+
+.navigation-holder {
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 48px; }
+  .navigation-holder a {
+    height: 100px;
+    width: 200px;
+    margin: auto;
+    color: red;
+    background: transparent;
+    border: red solid;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+    .navigation-holder a:hover {
+      color: yellow;
+      border: yellow solid; }
 
 html {
   background: url(../assets/bg3.jpg);

@@ -1,0 +1,29 @@
+﻿@model NietPathe.Models.Movies.ViewModelMoviePerformance
+@{
+    ViewBag.Title = Model.movie.Title;
+}
+
+<div class="navigation-holder">
+    <a
+        asp-controller="Window"
+        asp-action="Index">
+        < Terug
+    </a>
+    <a  asp-controller="Window"
+        asp-action="Index">
+        Bestel >
+    </a>
+</div>
+<div class="container window flex">
+    <div class="col-lg-6 poster">
+        <img src="@Model.movie.PosterUrl"/>
+    </div>
+    <div class="col-lg-6">
+        @foreach (Performance p in Model.performances.Where(x => x.StartTime >= DateTime.Now).OrderBy(x => x.StartTime))
+        {
+            <div>
+                @p.StartTime - @p.EndTime
+            </div>
+        }
+    </div>
+</div>

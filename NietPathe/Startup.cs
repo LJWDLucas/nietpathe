@@ -95,7 +95,7 @@ namespace NietPathe
             {
                 builder.UseMvc(routes =>
                 {
-                    routes.MapSpaFallbackRoute("window-fallback", "Window", new { controller = "Window", action = "Index" });
+                    routes.MapSpaFallbackRoute("window-fallback", "Window", new { controller = "Ticket", action = "Index" });
                 });
             });
 

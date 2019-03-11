@@ -8,6 +8,7 @@
         div:first-child {
             margin: 25px 0px;
             display: flex;
+            justify-content: space-between;
         }
 
         div:nth-child(2) {
@@ -24,25 +25,45 @@
         cursor: pointer;
 
         img {
+            border: 5px white solid;
             width: 100%;
             height: auto;
         }
     }
 
     .icon {
-        width: 200px;
-        max-width: 200px;
         height: 100px;
         display: flex;
-        position: absolute;
-        right: 50px;
-        top: 50px;
+        position: relative;
 
         img {
             width: 100px;
             height: 100%;
-            top: 0;
-            right: 150px;
+        }
+    }
+}
+
+.navigation-holder {
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 48px;
+
+    a {
+        height: 100px;
+        width: 200px;
+        margin: auto;
+        color: red;
+        background: transparent;
+        border: red solid;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        &:hover {
+            color: yellow;
+            border: yellow solid;
         }
     }
 }

@@ -18,11 +18,12 @@
         @foreach (Movie m in Model)
         {
             <div class="col-lg-6 poster">
-
-                <img src="@m.PosterUrl"/>
+                <a asp-controller="Window"
+                   asp-action="GetMovie"
+                   asp-route-id="@m.Id">
+                    <img src="@m.PosterUrl" />
+                </a>
             </div>
         }
     </div>
-
-
 </div>
