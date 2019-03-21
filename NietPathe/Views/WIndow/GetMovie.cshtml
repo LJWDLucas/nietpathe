@@ -9,21 +9,28 @@
         asp-action="Index">
         < Terug
     </a>
-    <a  asp-controller="Window"
-        asp-action="Index">
-        Bestel >
-    </a>
 </div>
 <div class="container window flex">
     <div class="col-lg-6 poster">
         <img src="@Model.movie.PosterUrl"/>
     </div>
     <div class="col-lg-6">
+        <ul class="unstyled">
         @foreach (Performance p in Model.performances.Where(x => x.StartTime >= DateTime.Now).OrderBy(x => x.StartTime))
         {
-            <div>
-                @p.StartTime - @p.EndTime
-            </div>
+            <li>
+                <a href="/web/performance/@p.Id">
+                    @p.StartTime - @p.EndTime
+                    @{
+                        if(p.ThreeDimensional) {
+                           <div class="dwrapper">
+                               <div class="d">3D</div>
+                           </div>
+                        }
+                    }
+                </a>
+            </li>
         }
+        </ul>
     </div>
 </div>

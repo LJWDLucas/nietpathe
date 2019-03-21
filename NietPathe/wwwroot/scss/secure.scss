@@ -1,0 +1,35 @@
+﻿#secure {
+    position: relative;
+    top: 100px;
+
+    .table-responsive {
+        background: white;
+    }
+
+    .fixed-pagination {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .date-holder {
+        margin-top: auto;
+        display: flex;
+        margin-bottom: auto;
+        width: 200px;
+        justify-content: space-around;
+        color:white;
+
+        input {
+            width: 120px;
+            text-align: center;
+        }
+    }
+
+    .padding-around {
+        padding: 15px 0 15px 0;
+    }
+}

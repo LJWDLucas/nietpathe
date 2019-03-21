@@ -4,6 +4,7 @@
 @import "movies";
 @import "review";
 @import "window";
+@import "secure";
 
 html {
     background: url(../assets/bg3.jpg);
@@ -88,5 +89,21 @@ body {
                 align-self: center;
             }
         }
+    }
+
+    .margin-bottom-150 {
+        margin-bottom: 150px;
+    }
+
+    nav {
+        &.nav-secure {
+            position: fixed;
+            z-index: 100;
+            width: 100%;
+        }
+    }
+
+    .white-text {
+        color:white;
     }
 }
