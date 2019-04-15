@@ -34,10 +34,10 @@ namespace NietPathe
         {
             services.Configure<Settings>(options =>
             {
-                //options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
-                //options.Database = Configuration.GetSection("MongoDB:Database").Value;
-                options.ConnectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_NIETPATHE_CONNECTION");
-                options.Database = Environment.GetEnvironmentVariable("APPSETTING_DATABASE");
+                options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoDB:Database").Value;
+                //options.ConnectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_NIETPATHE_CONNECTION");
+                //options.Database = Environment.GetEnvironmentVariable("APPSETTING_DATABASE");
             });
 
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
@@ -47,6 +47,11 @@ namespace NietPathe
                        .AllowAnyHeader();
             }));
 
+            services.AddDistributedMemoryCache();
+            services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+            });
             services.AddSingleton<IMongoClient, MongoClient>();
             services.AddTransient<ITicketRepository, TicketRepository>();
             services.AddTransient<IReviewRepository, ReviewRepository>();
@@ -74,7 +79,7 @@ namespace NietPathe
                 app.UseHsts();
             }
 
-
+            app.UseSession();
 
             app.UseHttpsRedirection();
             app.UseFileServer();
@@ -82,6 +87,7 @@ namespace NietPathe
 
             app.UseMvcWithDefaultRoute();
             app.UseStatusCodePages();
+
 
             app.MapWhen(context => context.Request.Path.Value.StartsWith("/secure", StringComparison.CurrentCulture), builder =>
             {

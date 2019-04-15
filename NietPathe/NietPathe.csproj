@@ -47,12 +47,6 @@
     <Content Remove="wwwroot\assets\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Views\WIndow\Index.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\WIndow\Index.html" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="wwwroot\assets\icon.png" />
   </ItemGroup>
 </Project>
