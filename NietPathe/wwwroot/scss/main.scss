@@ -107,60 +107,62 @@ body {
         color: white;
     }
 
-    .loader-wrapper {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 500;
-        justify-content: center;
-        display: flex;
+}
+
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+    .loader {
+        position: relative;
+        width: 128px;
+        height: 128px;
         align-items: center;
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
 
+        div {
+            display: inline-block;
+            left: 6px;
+            width: 13px;
+            background: #fff;
+            animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+        }
 
-        .loader {
-            position: relative;
-            width: 128px;
-            height: 128px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
+        div:nth-child(1) {
+            left: 6px;
+            animation-delay: -0.24s;
+        }
 
-            div {
-                display: inline-block;
-                left: 6px;
-                width: 13px;
-                background: #fff;
-                animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-            }
+        div:nth-child(2) {
+            left: 26px;
+            animation-delay: -0.12s;
+            margin: 0px 5px 0px 5px;
+        }
 
-            div:nth-child(1) {
-                left: 6px;
-                animation-delay: -0.24s;
-            }
-
-            div:nth-child(2) {
-                left: 26px;
-                animation-delay: -0.12s;
-                margin: 0px 5px 0px 5px;
-            }
-
-            div:nth-child(3) {
-                left: 45px;
-                animation-delay: 0;
-            }
+        div:nth-child(3) {
+            left: 45px;
+            animation-delay: 0;
         }
     }
+}
 
-    @keyframes loader {
-        0% {
-            top: 6px;
-            height: 51px;
-        }
+@keyframes loader {
+    0% {
+        top: 6px;
+        height: 51px;
+    }
 
-        50%, 100% {
-            top: 19px;
-            height: 26px;
-        }
+    50%, 100% {
+        top: 19px;
+        height: 26px;
     }
 }

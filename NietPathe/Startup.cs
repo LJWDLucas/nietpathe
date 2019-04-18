@@ -116,17 +116,3 @@ namespace NietPathe
         }
     }
 }
-
-/*
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "Demo Week 1", Version = "v1" });
-            });
-
-         
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Demo Week 1 - Version 1");
-            });
- */
